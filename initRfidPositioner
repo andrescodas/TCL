@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo '---------------------------'
+echo 'Killing previous executions'
+echo '---------------------------'
+
+
+killmymodules
+killmymodules
+
+pkill tclserv
+pkill eltclsh
+pkill tclserv
+pkill eltclsh
+
+h2 end
+h2 end
+
+echo '--------------------'
+echo 'Initilizing pocolibs'
+echo '--------------------'
+
+h2 init
+
+echo '-----------------------'
+echo 'Initilizing rfid module'
+echo '-----------------------'
+
+/home/andres/workspace/rfidPositionerBin/Linux/bin/rfidPositioner -b
+
+echo '----------------------'
+echo 'Initilizing TCL server'
+echo '----------------------'
+
+
+tclserv
+
+
+eltclsh testBogdanModelFile.tcl -package genom 
+
+echo '-----------------------'
+echo 'End'
+echo '-----------------------'
