@@ -3,7 +3,11 @@ set _RFIDPOSITIONER.TCL 1
 
 source connectSpace.tcl
 
-lm rfidPositioner path /home/andres/workspace/rfidPositionerBin/Linux/
+
+set home $env(HOME)
+set rfidPositionerPath /workspace/rfidPositionerBin/Linux/
+
+lm rfidPositioner path $home$rfidPositionerPath
 
 proc getPositionRFID { position } {
 

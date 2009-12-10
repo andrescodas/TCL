@@ -3,7 +3,10 @@ set _MOCAP.TCL 1
 
 source connectSpace.tcl
 
-lm mocap on space path /home/acodas/workspace/mocapBin/Linux/
+set home $env(HOME)
+set mocapPath /workspace/mocapBin/Linux/
+
+lm mocap on space path $home$mocapPath
 
 proc getPositionMocap { position } {
 

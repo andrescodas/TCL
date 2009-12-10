@@ -5,6 +5,10 @@ echo 'Killing previous executions'
 echo '---------------------------'
 
 
+rm $HOME/simulation/results/*.m
+rm $HOME/simulation/results/*.txt
+
+
 killmymodules
 killmymodules
 
@@ -26,7 +30,9 @@ echo '-----------------------'
 echo 'Initilizing rfid module'
 echo '-----------------------'
 
-/home/andres/workspace/rfidPositionerBin/Linux/bin/rfidPositioner -b
+$HOME/workspace/rfidPositionerBin/Linux/bin/rfidPositioner -b
+
+
 
 echo '----------------------'
 echo 'Initilizing TCL server'
