@@ -1,8 +1,5 @@
-
 source positionToFile.tcl
 source rfidPositioner.tcl
-
-
 
 set pi 3.1415
 set i 1
@@ -17,9 +14,6 @@ set fileName rfidPositionSet.txt
 set rfidPosFile $home$path$fileName
 
 clearFile $rfidPosFile
-
-
-
 
 
 while { $i <= 256 } {
@@ -37,5 +31,3 @@ while { $i <= 256 } {
 		incr i
 
 } 
- 
-	
