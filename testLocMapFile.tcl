@@ -4,9 +4,6 @@ source rfidLocMap.tcl
 set pi 3.1415
 set i 1
 
-#git test
-sdafas
-
 rfidLocMap::StartRobotParticles 2 -0.25 1
 rfidLocMap::StartOdometry 2 -0.25 1
 rfidLocMap::StartInput 
