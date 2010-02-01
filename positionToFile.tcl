@@ -14,6 +14,19 @@ proc position2File { index fileToWrite position } {
 
 }
 
+proc tagPosition2File { index fileToWrite position } {
+	
+	upvar $position pos
+	
+	set filePointer [open $fileToWrite a]
+	
+	puts $filePointer "$index $pos(x) $pos(y)"
+	
+	close $filePointer
+
+}
+
+
 proc covariance2File { index fileToWrite covariance } {
 	
 	upvar $covariance cov
