@@ -25,6 +25,26 @@ proc getPositionRFIDLocMap { position } {
  	
 }
 
+##  Only for the first tag... for more tags generate a List as the readings of the rfid
+proc getTagPosition { position } {
+
+  upvar $position pos
+
+  set format "status = %s\n"
+  append format "TagsPosition.nbTags = %d\n"
+  append format "TagsPosition.tags\[0\].tagId = %s\n"
+  append format "TagsPosition.tags\[0\].tag_position.x = %f\n"
+  append format "TagsPosition.tags\[0\].tag_position.y = %f\n"
+
+  scan [rfidLocMap::TagsPositionTagsPositionPosterRead] $format status nbTags tagId x y 
+
+  set pos(nbTags) $nbTags
+  set pos(tagId) $tagId
+  set pos(x) $x
+  set pos(y) $y
+
+}
+
 
 # ifndef
 
