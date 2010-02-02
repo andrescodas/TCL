@@ -1,0 +1,49 @@
+#!/bin/bash
+
+echo '---------------------------'
+echo 'Killing previous executions'
+echo '---------------------------'
+
+
+rm $HOME/simulation/results/*.m
+rm $HOME/simulation/results/*.txt
+
+
+killmymodules
+killmymodules
+
+pkill tclserv
+pkill eltclsh
+pkill tclserv
+pkill eltclsh
+
+h2 end
+h2 end
+
+echo '--------------------'
+echo 'Initilizing pocolibs'
+echo '--------------------'
+
+h2 init
+
+echo '-----------------------'
+echo 'Initilizing rfid module'
+echo '-----------------------'
+
+$HOME/workspace/rfidLocMapBin/Linux/bin/rfidLocMap -b
+
+
+
+echo '----------------------'
+echo 'Initilizing TCL server'
+echo '----------------------'
+
+
+tclserv
+
+
+eltclsh testLocMapFile.tcl -package genom 
+
+echo '-----------------------'
+echo 'End'
+echo '-----------------------'
