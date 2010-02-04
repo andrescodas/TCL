@@ -4,8 +4,10 @@ source rfidLocMap.tcl
 set pi 3.1415
 set i 1
 
-rfidLocMap::StartRobotParticles 2 -0.25 1
-rfidLocMap::StartOdometry 2 -0.25 1
+rfidLocMap::SetRobotInertia 0.9
+rfidLocMap::SetNumberRobotParticles 500
+rfidLocMap::StartRobotParticles 3 3 1
+rfidLocMap::StartOdometry 0 0 0
 rfidLocMap::StartInput 
 
 set home $env(HOME)
